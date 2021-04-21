@@ -1,0 +1,9 @@
+html,
+body {
+  background-color: aqua;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
