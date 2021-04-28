@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     filename: 'js/built.js',
-    path: resolve(__dirname, 'build'),
+    path: resolve(__dirname, 'build')
   },
   module: {
     rules: [
@@ -20,23 +20,24 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               ident: 'postcss',
-              plugins: () => [require('postcss-preset-env')()],
-            },
-          },
-        ],
-      },
-    ],
+              plugins: () => [require('postcss-preset-env')()]
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/index.html'
     }),
 
     new MiniCssExtractPlugin({
-      filename: 'css/built.css',
+      filename: 'css/built.css'
     }),
 
-    new OptimizeCssAssetsWebpackPlugin(),
+    // 压缩 css
+    new OptimizeCssAssetsWebpackPlugin()
   ],
-  mode: 'production',
+  mode: 'production'
 };
